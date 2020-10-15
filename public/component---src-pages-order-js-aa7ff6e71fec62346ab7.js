@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[5],{pi3A:function(e,n,t){"use strict";t.r(n),t.d(n,"default",(function(){return a}));var r=t("q1tI"),u=t.n(r);function a(){return u.a.createElement("div",null,u.a.createElement("p",null,"Hey! I'm the Order page"))}}}]);
+//# sourceMappingURL=component---src-pages-order-js-aa7ff6e71fec62346ab7.js.map

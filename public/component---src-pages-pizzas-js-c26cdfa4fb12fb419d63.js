@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[6],{hiQ4:function(e,n,t){"use strict";t.r(n),t.d(n,"default",(function(){return r}));var a=t("q1tI"),u=t.n(a),i=t("7oih");function r(){return u.a.createElement(i.a,null,u.a.createElement("p",null,"Hey! I'm the Pizzas page"))}}}]);
+//# sourceMappingURL=component---src-pages-pizzas-js-c26cdfa4fb12fb419d63.js.map
