@@ -1,4 +1,10 @@
 var plugins = [{
+      plugin: require('/Users/kaitlynbreuil/Desktop/Projects/pizza_pizza/gatsby/node_modules/gatsby-plugin-styled-components/gatsby-ssr'),
+      options: {"plugins":[]},
+    },{
+      plugin: require('/Users/kaitlynbreuil/Desktop/Projects/pizza_pizza/gatsby/node_modules/gatsby-source-sanity/gatsby-ssr'),
+      options: {"plugins":[],"projectId":"05hux260","dataset":"production","watchMode":true,"token":"skeJ0jyiZO5s00EBsKG95Ofbt8eYhUtYO98KOy6eTPq2Aev43P1WCHcp59etPGsM7Al5wE7I8rzkEm7av4SooaQvZejzOUiw150KFWeuvsxMxah9DYQn605f2LSP9rAFyCVkyIMblVxV0lxtDdhwurIu1EBOt6oVJW2rmUrH5jqyt6gs2iqA"},
+    },{
       plugin: require('/Users/kaitlynbreuil/Desktop/Projects/pizza_pizza/gatsby/gatsby-ssr'),
       options: {"plugins":[]},
     }]
