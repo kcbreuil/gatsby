@@ -25,7 +25,7 @@ const MenuItemStyles = styled.div`
       background: none;
       color: var(--red);
       font-size: 3rem;
-      position: absolute;
+      position: relative;
       right: 0;
       box-shadow: none;
       line-height: 1rem;
