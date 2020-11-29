@@ -5,6 +5,10 @@ import SEO from '../components/SEO';
 import useForm from '../utils/useForm';
 import formatMoney from '../utils/formatMoney';
 import calculatePizzaPrice from '../utils/calculatePizzaPrice';
+import usePizza from '../utils/usePizza';
+import OrderStyles from '../styles/OrderStyles';
+import MenuItemStyles from '../styles/MenuItemStyles';
+import PizzaOrder from '../components/PizzaOrder';
 
 export default function OrderPage({ data }) {
   const pizzas = data.pizzas.nodes;
@@ -12,14 +16,18 @@ export default function OrderPage({ data }) {
     name: '',
     email: '',
   });
+  const { order, addToOrder, removeFromOrder } = usePizza({
+    pizzas,
+    inputs: values,
+  });
   return (
     <>
       <SEO title="Order a Pizza!" />
-      <form>
+      <OrderStyles>
         <fieldset>
           <legend>Your Info</legend>
           <label htmlFor="name">
-            Name
+            Name{' '}
             <input
               type="text"
               name="name"
@@ -29,7 +37,7 @@ export default function OrderPage({ data }) {
           </label>
 
           <label htmlFor="email">
-            Email
+            Email{' '}
             <input
               type="email"
               name="email"
@@ -38,29 +46,42 @@ export default function OrderPage({ data }) {
             />
           </label>
         </fieldset>
-        <fieldset>
+        <fieldset className="menu">
           <legend>Menu</legend>
           {pizzas.map((pizza) => (
-            <div key={pizza.id}>
-              <Img width="50" height="100" fluid={pizza.image.asset.fluid} />
+            <MenuItemStyles key={pizza.id}>
+              <Img
+                width="50"
+                height="50"
+                fluid={pizza.image.asset.fluid}
+                alt={pizza.name}
+              />
               <div>
                 <h2>{pizza.name}</h2>
               </div>
               <div>
                 {['S', 'M', 'L'].map((size) => (
-                  <button type="button">
+                  <button
+                    type="button"
+                    onClick={() => addToOrder({ id: pizza.id, size })}
+                  >
                     {size}
                     {formatMoney(calculatePizzaPrice(pizza.price, size))}
                   </button>
                 ))}
               </div>
-            </div>
+            </MenuItemStyles>
           ))}
         </fieldset>
-        <fieldset>
+        <fieldset className="order">
           <legend>Order</legend>
+          <PizzaOrder
+            order={order}
+            removeFromOrder={removeFromOrder}
+            pizzas={pizzas}
+          />
         </fieldset>
-      </form>
+      </OrderStyles>
     </>
   );
 }
