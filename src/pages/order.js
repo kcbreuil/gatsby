@@ -65,6 +65,7 @@ export default function OrderPage({ data }) {
                   <button
                     type="button"
                     onClick={() => addToOrder({ id: pizza.id, size })}
+                    key={size}
                   >
                     {size}
                     {formatMoney(calculatePizzaPrice(pizza.price, size))}
